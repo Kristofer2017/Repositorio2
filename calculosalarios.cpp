@@ -9,13 +9,13 @@ int main(void)
     int n, i, hr, he;
     float SalarioT, SalarioR;
 
-    cout << "Ingresar el numero de empleados: ";
+    cout << "\nIngresar el numero de empleados: ";
     cin >> n;
 
     for (i=1; i<=n; i++){
-        cout << "Ingresa el numero de horas regulares trabajadas por el empleado " << i << ":\n";
+        cout << "\nIngresa el numero de horas regulares trabajadas por el empleado " << i << ":\n";
         cin >> hr;
-        cout << "Ingresa el numero de horas extra para el empleado numero " << i << ":\n";
+        cout << "\nIngresa el numero de horas extra para el empleado numero " << i << ":\n";
         cin >> he;
 
         SalarioT = salario_total(hr, he);

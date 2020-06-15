@@ -11,7 +11,7 @@ int main(){
     srand (time(NULL));
     Secret = rand() % 100 + 1;
 
-    int x, intentos = 1;
+    int x, intentos = 1, intentos_disponibles = 4;
 
     cout << "\nJuega a adivinar un numero entre 1 y 100\nTendras 5 intentos para adivinar\nPresiona 0 para salir\n\n";
     cout << "Digita un numero entre 1 y 100: ";
@@ -27,22 +27,23 @@ int main(){
             if(x == Secret){
                 cout << "\nGanaste!!! Tu numero de intentos fue: " << intentos << endl;
             }else{
-                cout << "\nEl numero ingresado es incorrecto\n";
-
                 //Esta condicion aplica cuando sea mayor o menor al numero pero no en el ultimo intento
                 if (Secret > x && intentos != 5){
-                    cout << "El numero es mayor al ingresado\n";
+                    cout << "\nEl numero ingresado es incorrecto. Pista: El numero es mayor al ingresado\n";
+                    cout << "Tinenes " << intentos_disponibles << " intentos restantes\n";
                     cout << "\nIngresa otro numero: ";
 
                 }else{
                     if (Secret < x && intentos != 5){
-                    cout << "El numero es menor al ingresado\n";
+                    cout << "\nEl numero ingresado es incorrecto. Pista: El numero es menor al ingresado\n";
+                    cout << "Tinenes " << intentos_disponibles << " intentos restantes\n";
                     cout << "\nIngresa otro numero: ";
                     }               
                 }
             }
         } 
         intentos++;
+        intentos_disponibles--;
 
     }while(x != Secret && intentos <= 5 && x != 0);
 
